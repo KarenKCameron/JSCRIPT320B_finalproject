@@ -10,12 +10,15 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 
-function Header({getData}) {
-    const [query, setQuery] = useState("");
+function Header(props) {
+    const [input, setInput] = useState("");
 
     const onSearchSubmit = (e) => {
     e.prevent.default();
-    getData.onSubmit(query)
+    props.onSubmit(input);
+    console.log('this is the input', input)
+    
+    // getData.onSubmit(input);
 
     
  };
@@ -39,8 +42,8 @@ function Header({getData}) {
                         <SearchIcon />
                     </IconButton>
                     <form>
-                        <input type = 'text' onChange={(e) => setQuery(e.target.value)} />
-                        <button type='submit' onSubmit={onSearchSubmit}/>
+                        <input type = 'text' onChange={(e) => setInput(e.target.value)} />
+                        <button type='subvmit' onClick={onSearchSubmit}></button>
                     </form>
                 </SearchBarWrapper>
             </SearchWrapper>

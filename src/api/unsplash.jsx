@@ -1,9 +1,9 @@
 import axios from 'axios';
-const apiKey =process.env.REACT_APP_KEY
+const apiKey = "Client ID 1H20HiEh06x6VFJU5eMp1uAunXvXx5Z44jCRTHFCeoQ"
 
 export default axios.create({
     baseUrl: "https://api.unsplash.com/",
     headers: {
-        Authorization: apiKey
+        Authorization: "Client-ID 1H20HiEh06x6VFJU5eMp1uAunXvXx5Z44jCRTHFCeoQ"
     },
 })

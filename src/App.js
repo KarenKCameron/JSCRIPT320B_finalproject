@@ -11,14 +11,13 @@ function App() {
     return unsplash.get('https://api.unsplash.com/search/photos', {
       params: {
         query: term,
-        client_id: "1H20HiEh06x6VFJU5eMp1uAunXvXx5Z44jCRTHFCeoQ",
         per_page: 30,
       }
     });
   };
   
 
-  const OnSearchSubmit = (term) => {
+  const onSearchSubmit = (term) => {
     console.log("on search submit", term)
     getImages(term).then ((res) => {
       let results = res.data.results;
@@ -68,7 +67,7 @@ useEffect(() => {
 
   return (
     <div className="app">
-      <Header onSubmit={OnSearchSubmit}/>
+      <Header onSubmit={onSearchSubmit}/>
       <Mainboard pins={pins}/>
     </div>
   );
